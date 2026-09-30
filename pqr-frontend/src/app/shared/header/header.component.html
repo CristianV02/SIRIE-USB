@@ -1,0 +1,36 @@
+<header class="banda">
+  <div class="marca">
+    <span class="logo" aria-hidden="true">U</span>
+    <div>
+      <span class="nombre">SIRIE</span>
+      <span class="lema">Quejas e ideas institucionales</span>
+    </div>
+  </div>
+
+  <div class="tema" role="group" aria-label="Tema de la interfaz">
+    <span>Tema</span>
+    <button
+      type="button"
+      [attr.aria-pressed]="theme.tema() === 'light'"
+      (click)="theme.set('light')"
+    >
+      claro
+    </button>
+    <span aria-hidden="true">·</span>
+    <button
+      type="button"
+      [attr.aria-pressed]="theme.tema() === 'dark'"
+      (click)="theme.set('dark')"
+    >
+      oscuro
+    </button>
+  </div>
+</header>
+
+<div class="franja" aria-hidden="true">
+  <span class="ambar"></span>
+  <span class="verde"></span>
+  <span class="teal"></span>
+  <span class="verde-d"></span>
+  <span class="azul"></span>
+</div>

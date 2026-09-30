@@ -1,0 +1,61 @@
+<app-header></app-header>
+
+<div class="login-container">
+  <div class="login-card">
+    <h2>Ingresar al sistema</h2>
+    <p class="subtitle">Usa las mismas credenciales del Sistema de Información.</p>
+
+    @if (error()) {
+      <div class="error-banner">
+        {{ error() }}
+      </div>
+    }
+
+    <form [formGroup]="form" (ngSubmit)="entrar()">
+      <div class="form-group">
+        <label for="email">Correo institucional</label>
+        <input
+          id="email"
+          type="email"
+          class="form-control"
+          formControlName="email"
+          placeholder="nombre&#64;unisimon.edu.co"
+        />
+        @if (errorDe('email')) {
+          <small class="text-danger">{{ errorDe('email') }}</small>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input
+          id="password"
+          type="password"
+          class="form-control"
+          formControlName="password"
+          placeholder="********"
+        />
+        @if (errorDe('password')) {
+          <small class="text-danger">{{ errorDe('password') }}</small>
+        }
+      </div>
+
+      <button type="submit" class="btn-primary" [disabled]="enviando()">
+        @if (enviando()) {
+          Entrando...
+        } @else {
+          Entrar
+        }
+      </button>
+
+      <div class="form-footer">
+        <a href="#">¿Primera vez? Usa tu código.</a>
+        <a [href]="recuperarUrl"> Recuperar contraseña</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<footer class="footer-text">
+  Universidad Simón Bolívar · Sede Cúcuta
+</footer>

@@ -1,0 +1,108 @@
+:host {
+  display: block;
+}
+
+.banda {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 24px;
+  background: var(--surf);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  background: var(--franja-verde);
+  color: var(--on-verde);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.nombre {
+  display: block;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.1;
+}
+
+.lema {
+  display: block;
+  color: var(--txt-2);
+  font-size: 12px;
+}
+
+.tema {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--txt-2);
+  font-size: 13px;
+
+  button {
+    padding: 2px;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+
+    &[aria-pressed='true'] {
+      color: var(--txt);
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: var(--verde);
+      text-underline-offset: 3px;
+    }
+  }
+}
+
+/* Proporciones tomadas del portal. No se reordenan entre pantallas. */
+.franja {
+  display: flex;
+  height: 4px;
+
+  span {
+    display: block;
+  }
+  .ambar {
+    flex: 22;
+    background: var(--franja-ambar);
+  }
+  .verde {
+    flex: 38;
+    background: var(--franja-verde);
+  }
+  .teal {
+    flex: 20;
+    background: var(--franja-teal);
+  }
+  .verde-d {
+    flex: 12;
+    background: var(--franja-verde-d);
+  }
+  .azul {
+    flex: 8;
+    background: var(--franja-azul);
+  }
+}
+
+@media (max-width: 480px) {
+  .banda {
+    padding: 10px 16px;
+  }
+  .lema {
+    display: none;
+  }
+}

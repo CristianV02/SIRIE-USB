@@ -1,0 +1,120 @@
+/*
+ * SIRIE · Sistema de diseño sobre la identidad institucional
+ * Los tokens viven aquí como variables CSS; el tema se cambia con
+ * el atributo data-theme en <html>. Ningún componente conoce un hex.
+ *
+ * Fuentes locales vía @fontsource, cargadas en angular.json
+ * (nunca CDN: la red de la universidad bloquea dominios externos).
+ */
+
+:root {
+  --verde: #00843d;
+  --verde-d: #006b32;
+  --ambar: #f5a800;
+  --azul: #00a9e0;
+  --bg: #f1f2f1;
+  --surf: #ffffff;
+  --line: #daddda;
+  --txt: #1e2a24;
+  --txt-2: #6b7671;
+  --input-bg: #f6f7f6;
+  --on-verde: #ffffff;
+  --error: #b3261e;
+  --error-bg: #fcecea;
+
+  --estado-registrada: #5b6770;
+  --estado-revision: #f5a800;
+  --estado-duplicada: #9aa0a6;
+  --estado-proceso: #00a9e0;
+  --estado-escalada: #d64828;
+  --estado-resuelta: #00843d;
+
+  /* Franja institucional: igual en los dos temas, nunca cambia de orden ni proporción. */
+  --franja-ambar: #f5a800;
+  --franja-verde: #00843d;
+  --franja-teal: #00857e;
+  --franja-verde-d: #006b32;
+  --franja-azul: #00a9e0;
+
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Public Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  color-scheme: light;
+}
+
+html[data-theme='dark'] {
+  --verde: #19a85a;
+  --verde-d: #0f7d42;
+  --ambar: #ffc145;
+  --azul: #3fc1f0;
+  --bg: #0f1417;
+  --surf: #171e22;
+  --line: #2c363c;
+  --txt: #e8ecee;
+  --txt-2: #9aa6ad;
+  --input-bg: #1d252a;
+  --on-verde: #ffffff;
+  --error: #f27457;
+  --error-bg: #2a1c19;
+
+  --estado-registrada: #8c97a1;
+  --estado-revision: #ffc145;
+  --estado-duplicada: #a9aeb4;
+  --estado-proceso: #3fc1f0;
+  --estado-escalada: #f27457;
+  --estado-resuelta: #3db16a;
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--txt);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  margin: 0;
+}
+
+a {
+  color: var(--verde);
+}
+
+/* Foco visible: borde de 2 px en verde, nunca outline:none. */
+:focus-visible {
+  outline: 2px solid var(--verde);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
